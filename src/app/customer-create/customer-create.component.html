@@ -1,0 +1,55 @@
+<div class="card mb-3 mx-auto mt-5 " style="max-width: 80%;">
+    <div class="row g-0">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+            <img src="../../assets/images/Rideassist.jpg" class="w-100 rounded-start mx-auto" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+
+                <!-- <h5 class="card-title fw-bold">{{isEdit?"Edit Customer Details":"Add Customer Details"}}</h5> -->
+                <h5 class="card-title fw-bold" *ngIf="isEdit;else addMode">Edit Customer Details</h5>
+
+                <ng-template #addMode>
+                    <h5 class="card-title fw-bold">Add Customer Details</h5>
+                </ng-template>
+
+
+                
+                <form action="" [formGroup]="customerForm" (ngSubmit)="handleSubmit()">
+                    <div class="mb-3">
+                        <label for="">Customer Name</label>
+                        <input type="text" class="form-control" formControlName="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Customer Phone Number</label>
+                        <input type="text" class="form-control" formControlName="phone">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Customer Email</label>
+                        <input type="email" class="form-control" formControlName="email">
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="">Running Kilometers</label>
+                        <input type="text" class="form-control" formControlName="running_km">
+
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="">VehicleNumber</label>
+                        <input type="text" class="form-control" formControlName="vehicle_no">
+
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-dark w-100">{{isEdit? "Change":"Add"}}</button>
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="mt-5">
+    <form action="" [formGroup]="workForm" (ngSubmit)="handleSubmit()">
+       <div class="row border p-5 shadow">
+        <div class="col-3">
+            <label for="">Title</label>
+            <input type="text" class="form-control" placeholder="enter work title" formControlName="title">
+        </div>
+
+        <div class="col-3">
+            <label for="">Description</label>
+            <input type="text" class="form-control" placeholder="enter decsription" formControlName="description">
+        </div>
+
+        <div class="col-3">
+            <label for="">Amount</label>
+            <input type="text" class="form-control" placeholder="enter amount" formControlName="amount">
+        </div>
+
+        <div class="col-3">
+            <button type="submit" class="btn btn-success mt-4">Add</button>
+        </div>
+       </div>
+
+    </form>
+</div>
